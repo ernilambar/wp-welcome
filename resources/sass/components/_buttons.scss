@@ -1,0 +1,14 @@
+.wpw-wrap {
+	.button-upgrade {
+		background: $green;
+		border-color: $green;
+		padding: 3px 21px;
+	}
+
+	.wpw-buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "name"        : "ernilambar/wp-welcome",
+  "description" : "Create welcome page in WordPress. Useful for themes to showcase related information.",
+  "keywords"    : [ "wordpress", "theme", "plugin" ],
+  "homepage"    : "https://github.com/ernilambar/wp-welcome",
+  "license"     : "MIT",
+  "authors"     : [
+    {
+      "name"     : "Nilambar Sharma",
+      "email"    : "nilambar@outlook.com",
+      "homepage" : "https://www.nilambar.net",
+      "role"     : "Developer"
+    }
+  ],
+  "support"     : {
+    "issues" : "https://github.com/ernilambar/wp-welcome/issues"
+  },
+  "require"     : {
+    "php" : ">=5.6"
+  }
+}
