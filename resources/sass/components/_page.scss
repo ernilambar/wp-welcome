@@ -1,0 +1,70 @@
+.wpw-wrap {
+	.wpw-main-inner {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 30px;
+
+		@include respond-to($bp3) {
+			flex-direction: column;
+		}
+	}
+
+	.wpw-main-content {
+		max-width: calc(100% - 332px);
+		width: 100%;
+		background: $white;
+		margin-top: 20px;
+		border: 1px solid $color_border;
+		box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+
+		@include respond-to($bp3) {
+			max-width: 100%;
+		}
+	}
+
+	.wpw-main.no-sidebar {
+		.wpw-main-content {
+			max-width: 100%;
+		}
+	}
+
+	.wpw-main-sidebar {
+		max-width: 300px;
+		width: 100%;
+
+		@include respond-to($bp3) {
+			max-width: 100%;
+		}
+	}
+
+	.wpw-header {
+		background: $white;
+		padding: 30px;
+		margin: -10px -20px 10px -20px;
+		border-bottom: 1px solid $color_border;
+		box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+
+		@include respond-to($bp3) {
+			margin: 0;
+		}
+
+		h1 {
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	.wpw-quick-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		padding-top: 10px;
+
+		a {
+			@include respond-to($bp6) {
+				min-width: 48%;
+				text-align: center;
+			}
+		}
+	}
+}
