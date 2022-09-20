@@ -356,7 +356,7 @@ class Welcome {
 					echo '<div class="wpw-main-sidebar">';
 
 					if ( is_callable( $this->sidebar_callback ) ) {
-						call_user_func( $this->sidebar_callback );
+						call_user_func( $this->sidebar_callback, $this );
 					}
 
 					echo '</div><!-- .wpw-main-sidebar -->';
@@ -460,7 +460,7 @@ class Welcome {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return array Page title.
+	 * @return string Page title.
 	 */
 	public function get_page_title() {
 		return $this->page['page_title'];
@@ -471,9 +471,31 @@ class Welcome {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return array Page subtitle.
+	 * @return string Page subtitle.
 	 */
 	public function get_page_subtitle() {
 		return $this->page['page_subtitle'];
+	}
+
+	/**
+	 * Return product name.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Product name.
+	 */
+	public function get_name() {
+		return $this->product_name;
+	}
+
+	/**
+	 * Return product version.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Product version.
+	 */
+	public function get_version() {
+		return $this->product_version;
 	}
 }
