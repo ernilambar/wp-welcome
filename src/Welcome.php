@@ -104,6 +104,9 @@ class Welcome {
 	 * Constructor.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $mode Mode; theme or plugin.
+	 * @param string $slug Plugin or theme slug.
 	 */
 	public function __construct( $mode, $slug ) {
 		if ( ! in_array( $mode, array( 'plugin', 'theme' ), true ) ) {
@@ -115,12 +118,12 @@ class Welcome {
 		}
 
 		if ( 'theme' === $mode ) {
-			$themeObject = wp_get_theme( $slug );
+			$theme_object = wp_get_theme( $slug );
 
-			if ( $themeObject->exists() ) {
-				$this->product_name    = $themeObject->get( 'Name' );
-				$this->product_version = $themeObject->get( 'Version' );
-				$this->product_slug    = $themeObject->get_template();
+			if ( $theme_object->exists() ) {
+				$this->product_name    = $theme_object->get( 'Name' );
+				$this->product_version = $theme_object->get( 'Version' );
+				$this->product_slug    = $theme_object->get_template();
 			}
 		} elseif ( 'plugin' === $mode ) {
 			$plugin_details = Helper::get_plugin_information( $slug );
@@ -231,7 +234,9 @@ class Welcome {
 	 */
 	public function set_page( $args = array() ) {
 		$defaults = array(
+			/* translators: 1: Name 2: Version  */
 			'page_title'     => sprintf( esc_html__( 'Welcome to %1$s - %2$s', 'wp-welcome' ), esc_html( $this->product_name ), esc_html( $this->product_version ) ),
+			/* translators: 1: Name */
 			'page_subtitle'  => sprintf( esc_html__( '%1$s is now installed and ready to use. Thank you for choosing %1$s, cheers!', 'wp-welcome' ), esc_html( $this->product_name ) ),
 			'menu_title'     => esc_html__( 'Admin Dashboard', 'wp-welcome' ),
 			'capability'     => 'edit_theme_options',
@@ -256,7 +261,9 @@ class Welcome {
 	public function set_admin_notice( $args = array() ) {
 		$defaults = array(
 			'type'        => 'success',
+			/* translators: 1: Name */
 			'message'     => sprintf( esc_html__( 'Welcome! %1$s is now installed and ready to use. Thank you for choosing %1$s.', 'wp-welcome' ), esc_html( $this->product_name ) ),
+			/* translators: 1: Name */
 			'button_text' => sprintf( esc_html__( 'Get started with %1$s', 'wp-welcome' ), $this->product_name ),
 			'screens'     => array( 'dashboard' ),
 		);
@@ -343,11 +350,11 @@ class Welcome {
 			<div class="wpw-main-inner">
 				<div class="wpw-main-content">
 
-					<?php View::render_tab_navigation( $this->tabs ); ?>
+					<?php View::render_tab_navigation( $this->tabs, $this ); ?>
 
 					<div class="wpw-tabs-content-wrap">
 
-						<?php View::render_tabs_content( $this->tabs ); ?>
+						<?php View::render_tabs_content( $this->tabs, $this ); ?>
 
 					</div><!-- .wpw-tabs-content-wrap -->
 				</div><!-- .wpw-main-content -->
@@ -497,5 +504,16 @@ class Welcome {
 	 */
 	public function get_version() {
 		return $this->product_version;
+	}
+
+	/**
+	 * Return product slug.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Product slug.
+	 */
+	public function get_slug() {
+		return $this->product_slug;
 	}
 }

@@ -21,7 +21,7 @@ class View {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param AdminDashboard $obj Instance of AdminDashboard.
+	 * @param Welcome $obj Instance of Welcome.
 	 */
 	public static function render_header( $obj ) {
 		echo '<div class="wpw-header">';
@@ -81,14 +81,17 @@ class View {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $tabs Tabs list.
+	 * @param array   $tabs Tabs list.
+	 * @param Welcome $obj Instance of Welcome.
 	 */
-	public static function render_tab_navigation( $tabs ) {
+	public static function render_tab_navigation( $tabs, $obj ) {
 		echo '<div class="wpw-tabs-nav">';
+
+		$slug = $obj->get_slug();
 
 		foreach ( $tabs as $tab ) {
 			$attrs = array(
-				'href'  => '#' . $tab['id'],
+				'href'  => '#' . $slug . '-' . $tab['id'],
 				'class' => array( 'tab-nav', 'tab-' . $tab['id'] ),
 			);
 
@@ -104,11 +107,14 @@ class View {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $tabs Tabs list.
+	 * @param array   $tabs Tabs list.
+	 * @param Welcome $obj Instance of Welcome.
 	 */
-	public static function render_tabs_content( $tabs ) {
+	public static function render_tabs_content( $tabs, $obj ) {
+		$slug = $obj->get_slug();
+
 		foreach ( $tabs as $tab ) {
-			echo '<div id="' . esc_attr( $tab['id'] ) . '" class="wpw-tab-content">';
+			echo '<div id="' . esc_attr( $slug . '-' . $tab['id'] ) . '" class="wpw-tab-content">';
 
 			self::render_tab( $tab );
 
