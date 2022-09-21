@@ -51,8 +51,9 @@
 		}
 	}
 
-	.wpw-star .dashicons-star-filled:before {
+	.wpw-stars .dashicons-star-filled:before {
 		color: $yellow;
+		margin-right: 3px;
 	}
 
 	&.wpw-box-plugin {

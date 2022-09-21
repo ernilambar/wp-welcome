@@ -452,6 +452,32 @@ class Welcome {
 	}
 
 	/**
+	 * Render sidebar box.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array   $args Sidebar box arguments.
+	 * @param Welcome $object Instance of Welcome.
+	 */
+	public function render_sidebar_box( $args = array(), $object ) {
+		$defaults = array(
+			'class'           => '',
+			'title'           => esc_html__( 'Box Title', 'wp-welcome' ),
+			'type'            => 'content',
+			'content'         => esc_html__( 'Box Content', 'wp-welcome' ),
+			'render_callback' => null,
+			'button_text'     => '',
+			'button_url'      => '#',
+			'button_class'    => '',
+			'button_new_tab'  => true,
+		);
+
+		$args = wp_parse_args( $args, $defaults );
+
+		View::render_sidebar_box( $args, $object );
+	}
+
+	/**
 	 * Return quick links.
 	 *
 	 * @since 1.0.0
@@ -515,5 +541,24 @@ class Welcome {
 	 */
 	public function get_slug() {
 		return $this->product_slug;
+	}
+
+	/**
+	 * Return stars markup.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Stars markup.
+	 */
+	public function get_stars() {
+		$output = '<div class="wpw-stars">';
+
+		for ( $i = 0; $i < 5; $i++ ) {
+			$output .= '<span class="dashicons-before dashicons-star-filled"></span>';
+		}
+
+		$output .= '</div><!-- .wpw-stars -->';
+
+		return $output;
 	}
 }

@@ -374,4 +374,56 @@ class View {
 		</table><!-- .comparison-table -->
 		<?php
 	}
+
+	/**
+	 * Render sidebar box.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array   $args Sidebar box arguments.
+	 * @param Welcome $obj Instance of Welcome.
+	 */
+	public static function render_sidebar_box( $args, $obj ) {
+		$box_attrs = array(
+			'class' => array( 'wpw-box' ),
+		);
+
+		if ( ! empty( $args['class'] ) ) {
+			$box_attrs['class'][] = $args['class'];
+		}
+
+		echo '<div ' . Utils::render_attr( $box_attrs, false ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+		if ( $args['title'] ) {
+			echo '<h3>' . esc_html( $args['title'] ) . '</h3>';
+		}
+
+		if ( 'content' === $args['type'] ) {
+			echo wp_kses_post( wpautop( $args['content'] ) );
+		}
+
+		if ( 'custom' === $args['type'] ) {
+			if ( is_callable( $args['render_callback'] ) ) {
+				call_user_func( $args['render_callback'], $obj );
+			}
+		}
+
+		if ( ! empty( $args['button_text'] ) && ! empty( $args['button_url'] ) ) {
+			$button_attrs = array(
+				'href' => $args['button_url'],
+			);
+
+			if ( ! empty( $args['button_class'] ) ) {
+				$button_attrs['class'] = $args['button_class'];
+			}
+
+			if ( true === $args['button_new_tab'] ) {
+				$button_attrs['target'] = '_blank';
+			}
+
+			echo '<a ' . Utils::render_attr( $button_attrs, false ) . '">' . esc_html( $args['button_text'] ) . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+
+		echo '</div><!-- .wpw-box -->';
+	}
 }
