@@ -50,7 +50,9 @@ if ( ! class_exists( Init_1_0_1::class, false ) ) {
 				define( 'WP_WELCOME_URL', rtrim( get_template_directory_uri(), '/' ) . '/vendor/ernilambar/wp-welcome' );
 			}
 
-			require_once __DIR__ . '/Loader.php';
+			if ( ! class_exists( \WPTRT\Autoload\Loader::class, false ) ) {
+				require_once __DIR__ . '/Loader.php';
+			}
 
 			$loader = new \WPTRT\Autoload\Loader();
 			$loader->add( 'Nilambar\\Welcome\\', __DIR__ . '/src' );
