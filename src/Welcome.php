@@ -241,6 +241,7 @@ class Welcome {
 			'menu_title'     => esc_html__( 'Admin Dashboard', 'wp-welcome' ),
 			'capability'     => 'edit_theme_options',
 			'menu_slug'      => 'wp-welcome',
+			'menu_icon'      => '',
 			'top_level_menu' => false,
 			'parent_page'    => 'options-general.php',
 		);
