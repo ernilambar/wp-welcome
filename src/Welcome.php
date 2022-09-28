@@ -332,6 +332,10 @@ class Welcome {
 	 * @since 1.0.0
 	 */
 	public function render_page() {
+		if ( ! current_user_can( $this->page['capability'] ) ) {
+			return;
+		}
+
 		echo '<div class="wrap wpw-wrap" id="wp-welcome-wrap">';
 
 		View::render_header( $this );
@@ -406,10 +410,11 @@ class Welcome {
 	 */
 	public function add_tab( $args ) {
 		$defaults = array(
-			'id'      => '',
-			'title'   => esc_html__( 'Tab Title', 'wp-welcome' ),
-			'type'    => 'content',
-			'content' => '',
+			'id'           => '',
+			'title'        => esc_html__( 'Tab Title', 'wp-welcome' ),
+			'type'         => 'content',
+			'content'      => '',
+			'grid_columns' => 2,
 		);
 
 		$this->tabs[] = wp_parse_args( $args, $defaults );

@@ -147,7 +147,7 @@ class View {
 
 			case 'grid':
 				if ( isset( $tab['items'] ) && ! empty( $tab['items'] ) ) {
-					self::render_grid_items( $tab['items'] );
+					self::render_grid_items( $tab['items'], array( 'grid_columns' => $tab['grid_columns'] ) );
 				}
 				break;
 
@@ -178,9 +178,12 @@ class View {
 	 * @since 1.0.0
 	 *
 	 * @param array $items Grid items list.
+	 * @param array $args Grid extra arguments.
 	 */
-	public static function render_grid_items( $items ) {
-		echo '<div class="wpw-col-2">';
+	public static function render_grid_items( $items, $args = array() ) {
+		$cols = ( isset( $args['grid_columns'] ) && absint( $args['grid_columns'] ) > 0 ) ? absint( $args['grid_columns'] ) : 2;
+
+		echo '<div class="wpw-col-' . esc_attr( $cols ) . '">';
 
 		foreach ( $items as $key => $item ) {
 			self::render_grid_item( $item );
@@ -211,8 +214,12 @@ class View {
 			echo '</h3>';
 		}
 
-		if ( isset( $item['description'] ) && ! empty( $item['description'] ) ) {
-			echo '<p>' . wp_kses_post( $item['description'] ) . '</p>';
+		if ( isset( $item['render_callback'] ) && is_callable( $item['render_callback'] ) ) {
+			call_user_func( $item['render_callback'] );
+		} else  {
+			if ( isset( $item['description'] ) && ! empty( $item['description'] ) ) {
+				echo '<p>' . wp_kses_post( $item['description'] ) . '</p>';
+			}
 		}
 
 		if ( isset( $item['button_text'] ) && ! empty( $item['button_text'] ) && isset( $item['button_url'] ) && ! empty( $item['button_url'] ) ) {
