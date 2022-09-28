@@ -1,8 +1,7 @@
 .wpw-col-2 {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	column-gap: 15px;
-	row-gap: 15px;
+	gap: 20px;
 
 	@include respond-to($bp1) {
 		grid-template-columns: repeat(1, 1fr);
@@ -13,8 +12,7 @@
 .wpw-col-3 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	column-gap: 15px;
-	row-gap: 15px;
+	gap: 20px;
 
 	@include respond-to($bp1) {
 		grid-template-columns: repeat(1, 1fr);

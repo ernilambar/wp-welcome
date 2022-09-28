@@ -1,6 +1,5 @@
 .wpw-box {
 	position: relative;
-	margin-top: 20px;
 	padding: 20px;
 	border: 1px solid $color_border;
 	box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
@@ -48,6 +47,7 @@
 		h3 {
 			border-bottom: none;
 			padding-bottom: 0;
+			font-size: 1.2em;
 		}
 	}
 

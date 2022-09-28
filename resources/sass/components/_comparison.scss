@@ -1,7 +1,6 @@
 .comparison-table {
 	border-spacing: 0;
 	width: 100%;
-	padding-top: 20px;
 
 	.dashicons-before:before {
 		font-size: 25px;
@@ -49,6 +48,7 @@
 
 	.wpw-comparison-row-upgrade td {
 		text-align: right;
+		padding-bottom: 10px;
 
 		a {
 			margin-top: 10px;
