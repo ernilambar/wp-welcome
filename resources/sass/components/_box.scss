@@ -17,7 +17,7 @@
 	}
 
 	p {
-		margin: 1.3em 0;
+		margin: 0 0 1.3em 0;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -51,9 +51,13 @@
 		}
 	}
 
-	.wpw-stars .dashicons-star-filled:before {
-		color: $yellow;
-		margin-right: 3px;
+	.wpw-stars {
+		margin-bottom: 10px;
+
+		.dashicons-star-filled:before {
+				color: $yellow;
+				margin-right: 3px;
+			}
 	}
 
 	&.wpw-box-plugin {

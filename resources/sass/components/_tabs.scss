@@ -4,7 +4,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	gap: 20px;
+	gap: 25px;
 
 	h3 {
 		margin: 0;
@@ -34,8 +34,12 @@
 			display: block;
 		}
 
-		p:last-child {
-			margin-bottom: 0;
+		p {
+			margin: 0 0 1.3em 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 
 		h2,
