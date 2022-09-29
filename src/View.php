@@ -183,7 +183,7 @@ class View {
 	public static function render_grid_items( $items, $args = array() ) {
 		$cols = ( isset( $args['grid_columns'] ) && absint( $args['grid_columns'] ) > 0 ) ? absint( $args['grid_columns'] ) : 2;
 
-		echo '<div class="wpw-col-' . esc_attr( $cols ) . '">';
+		echo '<div class="wpw-grid wpw-col-' . esc_attr( $cols ) . '">';
 
 		foreach ( $items as $key => $item ) {
 			self::render_grid_item( $item );
