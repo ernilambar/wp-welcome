@@ -402,7 +402,14 @@ class View {
 		echo '<div ' . Utils::render_attr( $box_attrs, false ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( $args['title'] ) {
-			echo '<h3>' . esc_html( $args['title'] ) . '</h3>';
+			echo '<h3>';
+
+			if ( ! empty( $args['icon'] ) ) {
+				echo '<span class="dashicons ' . esc_attr( $args['icon'] ) . '"></span>';
+			}
+
+			echo esc_html( $args['title'] );
+			echo '</h3>';
 		}
 
 		if ( 'content' === $args['type'] ) {
