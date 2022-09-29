@@ -469,6 +469,7 @@ class Welcome {
 		$defaults = array(
 			'class'           => '',
 			'title'           => esc_html__( 'Box Title', 'wp-welcome' ),
+			'icon'            => '',
 			'type'            => 'content',
 			'content'         => esc_html__( 'Box Content', 'wp-welcome' ),
 			'render_callback' => null,
