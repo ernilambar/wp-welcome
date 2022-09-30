@@ -430,7 +430,7 @@ class Welcome {
 	public function get_page_url() {
 		$parent = $this->parent_page;
 
-		if ( true === $this->top_level_menu ) {
+		if ( true === $this->top_level_menu || ( false === strpos( $parent, '.php' ) ) ) {
 			$parent = 'admin.php';
 		}
 
