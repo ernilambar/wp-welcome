@@ -247,7 +247,7 @@ class View {
 	 * @param array $items Plugin items list.
 	 */
 	public static function render_plugin_items( $items ) {
-		echo '<div class="wpw-col-2">';
+		echo '<div class="wpw-grid wpw-col-2">';
 
 		foreach ( $items as $key => $item ) {
 			self::render_plugin_item( $item );
