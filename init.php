@@ -7,13 +7,13 @@
 
 namespace Nilambar\Welcome;
 
-if ( ! class_exists( Init_1_0_2::class, false ) ) {
+if ( ! class_exists( Init_1_0_3::class, false ) ) {
 
-	class Init_1_0_2 {
+	class Init_1_0_3 {
 
-		const VERSION = '1.0.2';
+		const VERSION = '1.0.3';
 
-		const PRIORITY = 9997;
+		const PRIORITY = 9996;
 
 		public static $single_instance = null;
 
@@ -77,7 +77,7 @@ if ( ! class_exists( Init_1_0_2::class, false ) ) {
 				'WPW_OBJECT',
 				array(
 					'ajax_url'      => admin_url( 'admin-ajax.php' ),
-					'storage_key'   => wp_unique_id( 'wpw-' ) . '-activetab',
+					'storage_key'   => $this->get_unique_id( 'wpw-' ) . '-activetab',
 					'admin_nonce'   => wp_create_nonce( 'wpw_installer_nonce' ),
 					'i18n' => array(
 						'activate'        => esc_html__( 'Activate', 'wp-welcome' ),
@@ -88,7 +88,20 @@ if ( ! class_exists( Init_1_0_2::class, false ) ) {
 				)
 			);
 		}
+
+		/**
+		 * Gets unique ID.
+		 *
+		 * @since 1.0.3
+		 *
+		 * @param string $prefix Prefix for the returned ID.
+		 * @return string Unique ID.
+		 */
+		public function get_unique_id( $prefix = '' ) {
+			static $wpw_counter = 0;
+			return $prefix . (string) ++$wpw_counter;
+		}
 	}
 
-	Init_1_0_2::initiate();
+	Init_1_0_3::initiate();
 }
