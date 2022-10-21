@@ -435,7 +435,7 @@ class View {
 				$button_attrs['target'] = '_blank';
 			}
 
-			echo '<a ' . Utils::render_attr( $button_attrs, false ) . '">' . esc_html( $args['button_text'] ) . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a ' . Utils::render_attr( $button_attrs, false ) . '>' . esc_html( $args['button_text'] ) . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		echo '</div><!-- .wpw-box -->';
