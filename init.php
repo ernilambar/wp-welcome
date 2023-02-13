@@ -7,13 +7,13 @@
 
 namespace Nilambar\Welcome;
 
-if ( ! class_exists( Init_1_0_3::class, false ) ) {
+if ( ! class_exists( Init_1_0_4::class, false ) ) {
 
-	class Init_1_0_3 {
+	class Init_1_0_4 {
 
-		const VERSION = '1.0.3';
+		const VERSION = '1.0.4';
 
-		const PRIORITY = 9996;
+		const PRIORITY = 9995;
 
 		public static $single_instance = null;
 
@@ -103,5 +103,5 @@ if ( ! class_exists( Init_1_0_3::class, false ) ) {
 		}
 	}
 
-	Init_1_0_3::initiate();
+	Init_1_0_4::initiate();
 }
