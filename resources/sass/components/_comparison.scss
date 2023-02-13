@@ -2,7 +2,7 @@
 	border-spacing: 0;
 	width: 100%;
 
-	.dashicons-before:before {
+	.dashicons-before::before {
 		font-size: 25px;
 		height: 25px;
 		width: 25px;
@@ -33,17 +33,11 @@
 		width: 25%;
 	}
 
-	.dashicons-before:before {
-		font-size: 25px;
-		height: 25px;
-		width: 25px;
-	}
-
-	.yes.dashicons-before:before {
+	.yes.dashicons-before::before {
 		color: $green;
 	}
 
-	.no.dashicons-before:before {
+	.no.dashicons-before::before {
 		color: $orange;
 	}
 

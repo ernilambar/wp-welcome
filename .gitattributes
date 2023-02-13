@@ -1,4 +1,5 @@
 resources/ export-ignore
+languages/ export-ignore
 .npmrc export-ignore
 .editorconfig export-ignore
 .eslintignore export-ignore

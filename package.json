@@ -3,13 +3,13 @@
   "version": "1.0.4",
   "license": "GPL-2.0-or-later",
   "scripts": {
-    "dev": "webpack --watch",
-    "build": "webpack",
-    "prod": "NODE_ENV=production webpack",
+    "dev": "wp-scripts start",
+    "build": "wp-scripts build",
+    "lint:css": "wp-scripts lint-style 'resources/**/*.{css,scss}'",
+    "lint:css:fix": "wp-scripts lint-style 'resources/**/*.{css,scss}' --fix",
+    "lint:js": "wp-scripts lint-js ./resources webpack.config.js",
+    "lint:js:fix": "wp-scripts lint-js ./resources webpack.config.js --fix",
     "preinstall": "npx only-allow pnpm",
-    "eslint": "eslint --quiet .",
-    "eslint:fix": "eslint --quiet --fix .",
-    "format": "prettier --write \"resources/sass/**/*.scss\"",
     "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules"
   },
@@ -17,30 +17,9 @@
     "type": "git",
     "url": "https://github.com/ernilambar/wp-welcome"
   },
-  "prettier": "@wordpress/prettier-config",
   "browserslist": "> 1%, not dead",
   "devDependencies": {
-    "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
-    "@wordpress/eslint-plugin": "^12.8.0",
-    "@wordpress/prettier-config": "^1.4.0",
-    "babel-loader": "^8.2.5",
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.7.1",
-    "css-minimizer-webpack-plugin": "^4.1.0",
-    "eslint": "^8.21.0",
-    "mini-css-extract-plugin": "^2.6.1",
-    "node-wp-i18n": "^1.2.6",
-    "postcss": "^8.4.16",
-    "postcss-loader": "^7.0.1",
-    "postcss-preset-env": "^7.8.2",
-    "prettier": "^2.7.1",
-    "sass": "^1.54.9",
-    "sass-loader": "^13.0.2",
-    "style-loader": "^3.3.1",
-    "terser-webpack-plugin": "^5.3.6",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "@wordpress/scripts": "^25.3.0",
+    "node-wp-i18n": "^1.2.7"
   }
 }

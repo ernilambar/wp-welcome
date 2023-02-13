@@ -55,13 +55,14 @@
 	.wpw-stars {
 		margin-bottom: 10px;
 
-		.dashicons-star-filled:before {
+		.dashicons-star-filled::before {
 			color: $yellow;
 			margin-right: 3px;
 		}
 	}
 
 	&.wpw-box-plugin {
+
 		.wpw-buttons {
 			border-top: 1px solid $color_border;
 			padding-top: 15px;
