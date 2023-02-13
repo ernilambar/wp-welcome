@@ -34,7 +34,19 @@
 			display: block;
 		}
 
-		ul, ol, p {
+		ul {
+			list-style-type: disc;
+		}
+
+		ul,
+		ol {
+			list-style-position: outside;
+			margin-left: 15px;
+		}
+
+		ul,
+		ol,
+		p {
 			margin: 0 0 1.3em 0;
 
 			&:last-child {
@@ -50,16 +62,6 @@
 
 		h3 {
 			font-size: 1.2em;
-		}
-
-		ul {
-			list-style-type: disc;
-		}
-
-		ul,
-		ol {
-			list-style-position: outside;
-			margin-left: 15px;
 		}
 	}
 }
