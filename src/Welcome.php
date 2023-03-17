@@ -107,15 +107,23 @@ class Welcome {
 	 *
 	 * @param string $mode Mode; theme or plugin.
 	 * @param string $slug Plugin or theme slug.
+	 * @param array $extra_data Extra data.
 	 */
-	public function __construct( $mode, $slug ) {
-		if ( ! in_array( $mode, array( 'plugin', 'theme' ), true ) ) {
+	public function __construct( $mode, $slug, $extra_data = array() ) {
+		if ( ! in_array( $mode, array( 'plugin', 'theme', 'custom' ), true ) ) {
 			return;
 		}
 
 		if ( empty( $slug ) ) {
 			return;
 		}
+
+		// Cleanup slug.
+		$slug = str_replace( '_', '-', sanitize_title( strtolower( $slug ) ) );
+
+		$this->product_name    = $this->get_title_from_slug( $slug );
+		$this->product_version = '1.0.0';
+		$this->product_slug    = $slug;
 
 		if ( 'theme' === $mode ) {
 			$theme_object = wp_get_theme( $slug );
@@ -132,6 +140,13 @@ class Welcome {
 				$this->product_name    = $plugin_details['Name'];
 				$this->product_version = $plugin_details['Version'];
 				$this->product_slug    = $slug;
+			}
+		} elseif ( 'custom' === $mode ) {
+			if ( isset( $extra_data['name'] ) && 0 !== strlen( $extra_data['name'] ) ) {
+				$this->product_name = $extra_data['name'];
+			}
+			if ( isset( $extra_data['version'] ) && 0 !== strlen( $extra_data['version'] ) ) {
+				$this->product_version = $extra_data['version'];
 			}
 		}
 	}
@@ -548,6 +563,18 @@ class Welcome {
 	 */
 	public function get_slug() {
 		return $this->product_slug;
+	}
+
+	/**
+	 * Return name from slug.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $slug Slug.
+	 * @return string Name.
+	 */
+	public function get_title_from_slug( $slug ) {
+		return ucwords( str_replace( '-', ' ', $slug ) );
 	}
 
 	/**
