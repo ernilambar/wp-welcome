@@ -7,14 +7,14 @@
 
 namespace Nilambar\Welcome;
 
-if ( ! class_exists( Init_1_0_5::class, false ) ) {
+if ( ! class_exists( Init_1_0_6::class, false ) ) {
 
 	/**
 	 * Init class.
 	 *
 	 * @since 1.0.0
 	 */
-	class Init_1_0_5 {
+	class Init_1_0_6 {
 
 		/**
 		 * Version.
@@ -23,7 +23,7 @@ if ( ! class_exists( Init_1_0_5::class, false ) ) {
 		 *
 		 * @var string
 		 */
-		const VERSION = '1.0.5';
+		const VERSION = '1.0.6';
 
 		/**
 		 * Priority.
@@ -32,7 +32,7 @@ if ( ! class_exists( Init_1_0_5::class, false ) ) {
 		 *
 		 * @var int
 		 */
-		const PRIORITY = 9994;
+		const PRIORITY = 9993;
 
 		/**
 		 * Instance.
@@ -144,5 +144,5 @@ if ( ! class_exists( Init_1_0_5::class, false ) ) {
 		}
 	}
 
-	Init_1_0_5::initiate();
+	Init_1_0_6::initiate();
 }
