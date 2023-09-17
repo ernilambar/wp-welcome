@@ -4,6 +4,8 @@ resources/ export-ignore
 .eslintrc.json export-ignore
 .gitattributes export-ignore
 .prettierignore export-ignore
+.phpcompat.xml.dist export-ignore
+.phpcs.xml.dist export-ignore
 easy-replace-in-files.json export-ignore
 package.json export-ignore
 webpack.config.js export-ignore
