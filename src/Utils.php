@@ -20,9 +20,9 @@ class Utils {
 	 * @since 1.0.0
 	 *
 	 * @param array $attributes Attributes.
-	 * @param bool  $echo Whether to echo or not.
+	 * @param bool  $display Whether to echo or not.
 	 */
-	public static function render_attr( $attributes, $echo = true ) {
+	public static function render_attr( $attributes, $display = true ) {
 		if ( empty( $attributes ) ) {
 			return;
 		}
@@ -38,7 +38,6 @@ class Utils {
 
 			if ( false !== $value && 'href' === $name ) {
 				$esc_value = esc_url( $value );
-
 			} elseif ( false !== $value ) {
 				$esc_value = esc_attr( $value );
 			}
@@ -50,7 +49,7 @@ class Utils {
 			}
 		}
 
-		if ( ! empty( $html ) && true === $echo ) {
+		if ( ! empty( $html ) && true === $display ) {
 			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			return $html;

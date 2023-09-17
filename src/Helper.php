@@ -56,7 +56,7 @@ class Helper {
 		$filenames = array_keys( $plugins );
 
 		$filenames = array_map(
-			function( $f ) {
+			function ( $f ) {
 				return dirname( plugin_basename( $f ) );
 			},
 			$filenames
@@ -147,7 +147,6 @@ class Helper {
 
 		if ( ! is_wp_error( $api ) ) {
 			$output = $api;
-
 		}
 
 		return $output;
