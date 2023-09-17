@@ -99,7 +99,6 @@ class View {
 		}
 
 		echo '</div><!-- .wpw-tabs-nav -->';
-
 	}
 
 	/**
@@ -216,10 +215,8 @@ class View {
 
 		if ( isset( $item['render_callback'] ) && is_callable( $item['render_callback'] ) ) {
 			call_user_func( $item['render_callback'] );
-		} else  {
-			if ( isset( $item['description'] ) && ! empty( $item['description'] ) ) {
+		} elseif ( isset( $item['description'] ) && ! empty( $item['description'] ) ) {
 				echo '<p>' . wp_kses_post( $item['description'] ) . '</p>';
-			}
 		}
 
 		if ( isset( $item['button_text'] ) && ! empty( $item['button_text'] ) && isset( $item['button_url'] ) && ! empty( $item['button_url'] ) ) {

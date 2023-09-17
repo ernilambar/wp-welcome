@@ -107,7 +107,7 @@ class Welcome {
 	 *
 	 * @param string $mode Mode; theme or plugin.
 	 * @param string $slug Plugin or theme slug.
-	 * @param array $extra_data Extra data.
+	 * @param array  $extra_data Extra data.
 	 */
 	public function __construct( $mode, $slug, $extra_data = array() ) {
 		if ( ! in_array( $mode, array( 'plugin', 'theme', 'custom' ), true ) ) {
@@ -227,7 +227,7 @@ class Welcome {
 			echo '<div class="notice notice-' . esc_attr( $this->admin_notice['type'] ) . '">';
 			$this->render_notice();
 			echo '</div><!-- .notice -->';
-		};
+		}
 	}
 
 	/**
@@ -478,9 +478,9 @@ class Welcome {
 	 * @since 1.0.0
 	 *
 	 * @param array   $args Sidebar box arguments.
-	 * @param Welcome $object Instance of Welcome.
+	 * @param Welcome $obj Instance of Welcome.
 	 */
-	public function render_sidebar_box( $args, $object ) {
+	public function render_sidebar_box( $args, $obj ) {
 		$defaults = array(
 			'class'           => '',
 			'title'           => esc_html__( 'Box Title', 'wp-welcome' ),
@@ -496,7 +496,7 @@ class Welcome {
 
 		$args = wp_parse_args( $args, $defaults );
 
-		View::render_sidebar_box( $args, $object );
+		View::render_sidebar_box( $args, $obj );
 	}
 
 	/**

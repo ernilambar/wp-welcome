@@ -21,15 +21,15 @@ class Loader {
 	 * @access protected
 	 * @var    array
 	 */
-	protected $loaders = [];
+	protected $loaders = array();
 
 	/**
 	 * Adds a new prefix and path to load.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string        $prefix   Namespace prefix.
-	 * @param  array|string  $paths    Absolute path(s) where to look for classes.
+	 * @param  string       $prefix   Namespace prefix.
+	 * @param  array|string $paths    Absolute path(s) where to look for classes.
 	 * @return void
 	 */
 	public function add( $prefix, $paths ) {
@@ -44,8 +44,8 @@ class Loader {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string  $prefix   Namespace prefix.
-	 * @param  string  $path     Absolute path.
+	 * @param  string $prefix   Namespace prefix.
+	 * @param  string $path     Absolute path.
 	 * @return void
 	 */
 	public function remove( $prefix, $path = '' ) {
@@ -71,8 +71,8 @@ class Loader {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string  $prefix   Namespace prefix.
-	 * @param  string  $path     Absolute path.
+	 * @param  string $prefix   Namespace prefix.
+	 * @param  string $path     Absolute path.
 	 * @return bool
 	 */
 	public function has( $prefix, $path = '' ) {
@@ -94,9 +94,13 @@ class Loader {
 	public function register() {
 
 		if ( $this->loaders ) {
-			spl_autoload_register( function( $class ) {
-				$this->load( $class );
-			}, true, true );
+			spl_autoload_register(
+				function ( $class ) {
+					$this->load( $class );
+				},
+				true,
+				true
+			);
 		}
 	}
 
@@ -105,7 +109,7 @@ class Loader {
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @param  string  $class  Fully-qualified class name.
+	 * @param  string $class  Fully-qualified class name.
 	 * @return void
 	 */
 	protected function load( $class ) {
