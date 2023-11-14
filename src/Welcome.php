@@ -101,6 +101,33 @@ class Welcome {
 	protected $sidebar_callback = null;
 
 	/**
+	 * Product name.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	protected $product_name;
+
+	/**
+	 * Product slug.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	protected $product_slug;
+
+	/**
+	 * Product version.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	protected $product_version;
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0
