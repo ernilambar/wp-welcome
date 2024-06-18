@@ -39,7 +39,7 @@
 	"scripts": {
 		"dev": "webpack --watch",
 		"build": "webpack --mode=production --no-devtool",
-		"format": "prettier --write \"resources/**/*.{js,scss}\" webpack.config.js *.json",
+		"format": "prettier --write \"resources/**/*.{js,scss}\" webpack.config.js *.json .*.json",
 		"lint-pkg-json": "npmPkgJsonLint ."
 	}
 }

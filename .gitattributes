@@ -4,7 +4,6 @@ resources/ export-ignore
 .npmpackagejsonlintrc.json export-ignore
 .prettierignore export-ignore
 .prettierrc export-ignore
-.phpcompat.xml.dist export-ignore
 .phpcs.xml.dist export-ignore
 easy-replace-in-files.json export-ignore
 package.json export-ignore
