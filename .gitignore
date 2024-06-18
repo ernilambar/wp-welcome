@@ -45,11 +45,6 @@ npm-debug.log
 # Sass
 .sass-cache/
 
-# PM files
-package-lock.json
-pnpm-lock.yaml
-bun.lockb
-
 # Project folders
 build/
 deploy/
