@@ -1,5 +1,4 @@
 .wpw-wrap {
-
 	.wpw-main-inner {
 		display: flex;
 		flex-wrap: wrap;
@@ -25,7 +24,6 @@
 	}
 
 	.wpw-main.no-sidebar {
-
 		.wpw-main-content {
 			max-width: 100%;
 		}
@@ -69,7 +67,6 @@
 		padding-top: 10px;
 
 		a {
-
 			@include respond-to($bp6) {
 				min-width: 48%;
 				text-align: center;

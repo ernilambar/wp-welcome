@@ -1,6 +1,6 @@
 import './sass/wp-welcome.scss';
 
-( function( $ ) {
+( function ( $ ) {
 	// Main wrapper;
 	const $wrapper = $( '#wp-welcome-wrap' );
 
@@ -9,7 +9,11 @@ import './sass/wp-welcome.scss';
 			url: WPW_OBJECT.ajax_url,
 			type: 'POST',
 			dataType: 'json',
-			data: { action: 'wpw_plugin_installer', plugin, nonce: WPW_OBJECT.admin_nonce },
+			data: {
+				action: 'wpw_plugin_installer',
+				plugin,
+				nonce: WPW_OBJECT.admin_nonce,
+			},
 			beforeSend() {
 				$btn.addClass( 'installing' );
 			},
@@ -31,7 +35,11 @@ import './sass/wp-welcome.scss';
 			url: WPW_OBJECT.ajax_url,
 			type: 'POST',
 			dataType: 'json',
-			data: { action: 'wpw_plugin_activation', plugin, nonce: WPW_OBJECT.admin_nonce },
+			data: {
+				action: 'wpw_plugin_activation',
+				plugin,
+				nonce: WPW_OBJECT.admin_nonce,
+			},
 			beforeSend() {
 				$btn.addClass( 'installing' );
 			},
@@ -48,7 +56,7 @@ import './sass/wp-welcome.scss';
 		} );
 	};
 
-	$( '.wpw-box-plugin a.button' ).on( 'click', function( e ) {
+	$( '.wpw-box-plugin a.button' ).on( 'click', function ( e ) {
 		e.preventDefault();
 
 		const $button = $( this );
@@ -92,7 +100,7 @@ import './sass/wp-welcome.scss';
 		$wrapper.find( '.wpw-tabs-nav a' ).first().addClass( 'active' );
 	}
 
-	$wrapper.find( '.wpw-tabs-nav a' ).on( 'click', function( e ) {
+	$wrapper.find( '.wpw-tabs-nav a' ).on( 'click', function ( e ) {
 		e.preventDefault();
 
 		if ( $( this ).hasClass( 'active' ) ) {
@@ -107,10 +115,13 @@ import './sass/wp-welcome.scss';
 
 		// Save active tab in local storage.
 		if ( 'undefined' !== typeof localStorage ) {
-			localStorage.setItem( WPW_OBJECT.storage_key, targetGroup.replace( '#', '' ) );
+			localStorage.setItem(
+				WPW_OBJECT.storage_key,
+				targetGroup.replace( '#', '' )
+			);
 		}
 
 		$wrapper.find( '.wpw-tab-content' ).hide();
 		$( targetGroup ).fadeIn( 'fast' );
 	} );
-}( jQuery ) );
+} )( jQuery );
