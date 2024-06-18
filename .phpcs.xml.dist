@@ -34,7 +34,10 @@
   <arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
 
   <!-- Minimum support WP Version. -->
-  <config name="minimum_supported_wp_version" value="4.9"/>
+  <config name="minimum_supported_wp_version" value="6.0"/>
+
+	<!-- PHP version check. -->
+	<config name="testVersion" value="7.0-"/>
 
   <!-- Don't worry about files that don't contain any code -->
   <rule ref="Internal.NoCodeFound">
@@ -45,10 +48,6 @@
   <config name="ignore_warnings_on_exit" value="1"/>
 
   <!-- Include the WordPress rulesets. -->
-  <rule ref="WordPress">
-    <exclude name="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents"/>
-	</rule>
-
   <rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
     <properties>
       <property name="blank_line_check" value="true"/>
@@ -78,4 +77,13 @@
   <rule ref="WordPress.WP.GlobalVariablesOverride.OverrideProhibited">
     <type>warning</type>
   </rule>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="wp-welcome" />
+		</properties>
+	</rule>
+
+	<!-- Loads the PHP Compatibility ruleset. -->
+  <rule ref="PHPCompatibilityWP" />
 </ruleset>
