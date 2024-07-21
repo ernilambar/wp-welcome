@@ -115,10 +115,7 @@ import './sass/wp-welcome.scss';
 
 		// Save active tab in local storage.
 		if ( 'undefined' !== typeof localStorage ) {
-			localStorage.setItem(
-				WPW_OBJECT.storage_key,
-				targetGroup.replace( '#', '' )
-			);
+			localStorage.setItem( WPW_OBJECT.storage_key, targetGroup.replace( '#', '' ) );
 		}
 
 		$wrapper.find( '.wpw-tab-content' ).hide();
