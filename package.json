@@ -1,6 +1,6 @@
 {
 	"name": "wp-welcome",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "WP Welcome",
 	"author": "Nilambar Sharma",
 	"license": "MIT",
@@ -39,7 +39,7 @@
 	"scripts": {
 		"dev": "webpack --watch",
 		"build": "webpack --mode=production --no-devtool",
-		"format": "prettier --write \"resources/**/*.{js,scss}\" webpack.config.js *.json .*.json",
+		"format": "prettier \"**/*.{cjs,css,js,json,mjs,scss}\" --write",
 		"lint-pkg-json": "npmPkgJsonLint ."
 	}
 }

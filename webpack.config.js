@@ -66,9 +66,6 @@ module.exports = {
 	},
 	plugins: [ new MiniCssExtractPlugin( { filename: '[name].css' } ) ],
 	optimization: {
-		minimizer: [
-			new TerserPlugin( { extractComments: false } ),
-			new CssMinimizerPlugin(),
-		],
+		minimizer: [ new TerserPlugin( { extractComments: false } ), new CssMinimizerPlugin() ],
 	},
 };

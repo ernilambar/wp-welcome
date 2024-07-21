@@ -378,7 +378,12 @@ class Welcome {
 			return;
 		}
 
-		echo '<div class="wrap wpw-wrap" id="wp-welcome-wrap">';
+		$wrap_attrs = array(
+			'id'    => 'wp-welcome-wrap',
+			'class' => array( 'wrap', 'wpw-wrap', sanitize_title( $this->page['menu_slug'] ) . '-wrap' ),
+		);
+
+		echo '<div ' . Utils::render_attr( $wrap_attrs, false ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		View::render_header( $this );
 
