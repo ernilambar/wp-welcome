@@ -1,42 +1,31 @@
 .wpw-wrap {
 	.wpw-main-inner {
 		display: flex;
-		flex-wrap: wrap;
 		column-gap: 30px;
 
-		@include respond-to($bp3) {
+		@include respond-to($bp1) {
 			flex-direction: column;
 		}
 	}
 
 	.wpw-main-content {
-		max-width: calc(100% - 332px);
-		width: 100%;
 		background: $white;
 		margin-top: 20px;
 		border: 1px solid $color_border;
 		box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
 		height: 100%;
-
-		@include respond-to($bp3) {
-			max-width: 100%;
-		}
+		flex: 0 1 calc(100% - 332px);
 	}
 
 	.wpw-main.no-sidebar {
 		.wpw-main-content {
-			max-width: 100%;
+			flex: 1 1 calc(100% - 332px);
 		}
 	}
 
 	.wpw-main-sidebar {
-		max-width: 300px;
-		width: 100%;
+		flex-basis: 300px;
 		margin-top: 20px;
-
-		@include respond-to($bp3) {
-			max-width: 100%;
-		}
 
 		.wpw-box {
 			margin-bottom: 20px;
@@ -50,7 +39,7 @@
 		border-bottom: 1px solid $color_border;
 		box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
 
-		@include respond-to($bp3) {
+		@include respond-to($bp1) {
 			margin: 0;
 		}
 
