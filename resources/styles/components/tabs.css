@@ -1,6 +1,6 @@
 .wpw-tabs-nav {
 	padding: 15px 20px;
-	border-bottom: 1px solid $color_border;
+	border-bottom: 1px solid var(--wpw-color-border);
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -19,7 +19,7 @@
 		box-shadow: none;
 
 		&.active {
-			border-color: $blue;
+			border-color: var(--wpw-color-blue);
 		}
 	}
 }

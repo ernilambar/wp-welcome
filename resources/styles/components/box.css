@@ -1,18 +1,18 @@
 .wpw-box {
 	position: relative;
 	padding: 20px;
-	border: 1px solid $color_border;
+	border: 1px solid var(--wpw-color-border);
 	box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
 	background: #fff;
 
 	h3 {
 		margin-top: 0;
-		border-bottom: 1px solid $color_border;
+		border-bottom: 1px solid var(--wpw-color-border);
 		padding-bottom: 10px;
 		font-size: 1.2em;
 
 		span {
-			color: $color_primary;
+			color: var(--wpw-color-primary);
 			margin-right: 5px;
 		}
 	}
@@ -35,13 +35,13 @@
 	}
 
 	&.gray {
-		background: #f8f9fd;
+		background: var(--wpw-color-whitesmoke);
 	}
 
 	&.plain {
 		position: relative;
-		border: 1px solid $color_border;
-		background: #f8f9fd;
+		border: 1px solid var(--wpw-color-border);
+		background: var(--wpw-color-whitesmoke);
 		border-radius: 5px;
 		padding: 20px;
 
@@ -56,14 +56,14 @@
 		margin-bottom: 10px;
 
 		.dashicons-star-filled::before {
-			color: $yellow;
+			color: var(--wpw-color-yellow);
 			margin-right: 3px;
 		}
 	}
 
 	&.wpw-box-plugin {
 		.wpw-buttons {
-			border-top: 1px solid $color_border;
+			border-top: 1px solid var(--wpw-color-border);
 			padding-top: 15px;
 		}
 	}

@@ -34,11 +34,11 @@
 	}
 
 	.yes.dashicons-before::before {
-		color: $green;
+		color: var(--wpw-color-green);
 	}
 
 	.no.dashicons-before::before {
-		color: $orange;
+		color: var(--wpw-color-orange);
 	}
 
 	.wpw-comparison-row-upgrade td {

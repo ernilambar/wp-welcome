@@ -1,4 +1,4 @@
-import './sass/wp-welcome.scss';
+import './styles/wp-welcome.css';
 
 ( function ( $ ) {
 	// Main wrapper;

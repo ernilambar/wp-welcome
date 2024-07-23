@@ -9,7 +9,7 @@
 	&.wpw-col-2 {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 
-		@include respond-to($bp1) {
+		@media (--bp-1) {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
@@ -17,11 +17,10 @@
 	&.wpw-col-3 {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 
-		@include respond-to($bp1) {
+		@media (--bp-1) {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
-
-		@include respond-to($bp3) {
+		@media (--bp-3) {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
