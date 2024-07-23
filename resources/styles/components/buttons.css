@@ -1,7 +1,7 @@
 .wpw-wrap {
 	.button-upgrade {
-		background: $green;
-		border-color: $green;
+		background: var(--wpw-color-green);
+		border-color: var(--wpw-color-green);
 		padding: 5px 20px;
 		display: inline-flex;
 		justify-content: center;
@@ -18,7 +18,7 @@
 
 	.button-hero {
 		box-shadow: none !important;
-		border-color: $blue;
+		border-color: var(--wpw-color-blue);
 
 		&:hover {
 			background-color: #135e96;
