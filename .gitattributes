@@ -2,9 +2,11 @@ resources/ export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
 .npmpackagejsonlintrc.json export-ignore
-.prettierignore export-ignore
-.prettierrc export-ignore
 .phpcs.xml.dist export-ignore
-easy-replace-in-files.json export-ignore
+.prettierignore export-ignore
+.prettierrc.mjs export-ignore
 package.json export-ignore
+pnpm-lock.yaml export-ignore
+postcss.config.cjs export-ignore
+README.md export-ignore
 webpack.config.js export-ignore
